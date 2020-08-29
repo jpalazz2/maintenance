@@ -19,7 +19,17 @@ module.exports = {
           loader: 'babel-loader',
         },
       },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      },
     ],
+  },
+  resolve: {
+    extensions: ['.jsx', '.js', '.css'],
+  },
+  externals: {
+    gapi: 'gapi',
   },
   devtool: 'inline-source-map',
   devServer: {

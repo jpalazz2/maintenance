@@ -6,15 +6,19 @@ import ReactDOM from 'react-dom';
 
 import type { ChildrenArray, Element } from 'react';
 
-type Props = {
+import './Text.css';
+
+type Props = {|
   children: ChildrenArray<string>,
-  inline: true,
-};
+  size?: 'small' | 'regular' | 'large' | 'xlarge',
+|};
 
-function Text(props: Props): Element<'span'> {
-  const { children, inline, ...rest } = props;
-
-  return <span {...rest}>{children}</span>;
+function Text({ children, size, ...rest }: Props): Element<'span'> {
+  return (
+    <span className={'Text-' + (size ?? 'regular')} {...rest}>
+      {children}
+    </span>
+  );
 }
 
 export default Text;
