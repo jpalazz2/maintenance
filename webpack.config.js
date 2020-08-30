@@ -3,8 +3,8 @@ const path = require('path');
 module.exports = {
   mode: 'development',
   entry: {
-    index: './src/client/index.jsx',
-    login: './src/client/login.jsx',
+    index: './src/index.jsx',
+    login: './src/login.jsx',
   },
   output: {
     path: path.resolve(__dirname, 'build'),
